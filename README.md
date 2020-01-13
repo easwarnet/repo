@@ -1,6 +1,6 @@
 # CliMenuConsole
 
-Cpp Program for creating Cli based Menu
+- Cli based Menu using Cpp, created using Eclipse
 - Dynamic Menu creation 
 - Support of Submenu creation
 - Callback function on Menu Select Event
