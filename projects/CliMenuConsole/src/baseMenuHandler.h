@@ -11,6 +11,7 @@
 #include <functional>
 #include <memory>
 #include <limits>
+#include "log.h"
 using namespace std;
 
 enum {
@@ -18,22 +19,6 @@ enum {
 	EXECUTED,
 	SUB_MENU_EXIST,
 };
-
-#define LOG(...) std::cout , __VA_ARGS__
-#define LOGN(...) std::cout , __VA_ARGS__ , std::endl
-
-namespace {
-	template <typename T>
-	std::ostream& operator,(std::ostream& out, const T& t) {
-	  out << t;
-	  return out;
-	}
-
-	std::ostream& operator,(std::ostream& out, std::ostream&(*f)(std::ostream&)) {
-	  out << f;
-	  return out;
-	}
-}
 
 class BaseMenu {
 	public:

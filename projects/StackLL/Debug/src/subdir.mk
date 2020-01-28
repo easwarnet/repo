@@ -3,24 +3,24 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
-CPP_SRCS += \
-../src/baseMenuHandler.cpp \
-../src/main.cpp 
+C_SRCS += \
+../src/main.c \
+../src/stack.c 
 
 OBJS += \
-./src/baseMenuHandler.o \
-./src/main.o 
+./src/main.o \
+./src/stack.o 
 
-CPP_DEPS += \
-./src/baseMenuHandler.d \
-./src/main.d 
+C_DEPS += \
+./src/main.d \
+./src/stack.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-src/%.o: ../src/%.cpp
+src/%.o: ../src/%.c
 	@echo 'Building file: $<'
-	@echo 'Invoking: GCC C++ Compiler'
-	g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	@echo 'Invoking: GCC C Compiler'
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

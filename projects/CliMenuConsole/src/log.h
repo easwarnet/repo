@@ -11,7 +11,6 @@
 #include <functional>
 #include <memory>
 #include <limits>
-#include "log.h"
 
 using namespace std;
 
